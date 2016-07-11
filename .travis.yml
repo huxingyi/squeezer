@@ -9,4 +9,4 @@ script:
   - export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
   - cd src
   - make
-  - ./squeezerw ../example/images --verbose --width 512 --height 256 --border 1 --output ../example/squeezer.png
+  - ./squeezerw ../example/images --verbose --width 512 --height 256 --border 1 --outputTexture ../example/squeezer.png --outputInfo ../example/squeezer.xml
