@@ -1,0 +1,12 @@
+os:
+  - linux
+  - osx
+
+language: c
+script:
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install imagemagick; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install imagemagick; fi
+  - export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+  - cd src
+  - make
+  - ./squeezerw ../example/images --verbose --width 512 --height 256 --border 1 --output ../example/squeezer.png
