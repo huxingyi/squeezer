@@ -12,7 +12,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
- 
+
 #include <wand/magick_wand.h>
 #include <dirent.h>
 #include <stdlib.h>
@@ -115,6 +115,8 @@ typedef struct squeezerContext {
   MagickWand *binWand;
   PixelWand *transparentBackground;
   PixelWand *border;
+  int binWidth;
+  int binHeight;
 } squeezerContext;
 
 static void initSqueezerContext(squeezerContext *ctx) {
@@ -154,8 +156,34 @@ static void releaseSqueezerContext(squeezerContext *ctx) {
   }
 }
 
+static int outputInfo(squeezerContext *ctx, const char *outputInfoFilename) {
+  int index;
+  FILE *fp = fopen(outputInfoFilename, "w");
+  if (!fp) {
+    fprintf(stderr, "%s: fopen %s failed\n", __FUNCTION__,
+      outputInfoFilename);
+    return -1;
+  }
+  fprintf(fp, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  fprintf(fp, "<texture width=\"%d\" height=\"%d\">\n",
+    ctx->binWidth, ctx->binHeight);
+  for (index = 0; index < ctx->itemCount; ++index) {
+    maxRectsSize *ipt = &ctx->inputs[index];
+    maxRectsPosition *pos = &ctx->bestResults[index];
+    const char *itemFilename = ctx->filenameArray[index];
+    fprintf(fp,
+      "    <sprite name=\"%s\" left=\"%d\" top=\"%d\" rotated=\"%s\" width=\"%d\" height=\"%d\"></sprite>\n",
+      itemFilename, pos->left, pos->top, pos->rotated ? "true" : "false",
+      ipt->width, ipt->height);
+  }
+  fprintf(fp, "</texture>\n");
+  fclose(fp);
+  return 0;
+}
+
 int squeezer(const char *dir, int binWidth, int binHeight, int allowRotations,
-    const char *outputFilename, int border, int verbose) {
+    const char *outputImageFilename, const char *outputInfoFilename,
+    int border, int verbose) {
   int index;
   fileItem *loopItem;
   squeezerContext contextStruct;
@@ -173,6 +201,9 @@ int squeezer(const char *dir, int binWidth, int binHeight, int allowRotations,
   }
 
   initSqueezerContext(ctx);
+
+  ctx->binWidth = binWidth;
+  ctx->binHeight = binHeight;
 
   if (verbose) {
     printf("fetching file list from dir(%s)\n", dir);
@@ -325,14 +356,26 @@ int squeezer(const char *dir, int binWidth, int binHeight, int allowRotations,
   }
 
   if (verbose) {
-    printf("outputing bin(%s)\n", outputFilename);
+    printf("outputing bin(%s)\n", outputImageFilename);
   }
 
-  if (MagickTrue != MagickWriteImage(ctx->binWand, outputFilename)) {
+  if (MagickTrue != MagickWriteImage(ctx->binWand, outputImageFilename)) {
     fprintf(stderr, "%s: %s\n", __FUNCTION__, "MagickWriteImage failed");
     releaseSqueezerContext(ctx);
     return -1;
   }
+
+  if (verbose) {
+    printf("outputing info(%s)\n", outputInfoFilename);
+  }
+
+  if (0 != outputInfo(ctx, outputInfoFilename)) {
+    fprintf(stderr, "%s: outputInfo %s failed\n", __FUNCTION__,
+      outputInfoFilename);
+    releaseSqueezerContext(ctx);
+    return -1;
+  }
+
   releaseSqueezerContext(ctx);
 
   if (verbose) {

@@ -12,11 +12,12 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
- 
+
 #ifndef SQUEEZER_H
 #define SQUEEZER_H
 
 int squeezer(const char *dir, int binWidth, int binHeight, int allowRotations,
-  const char *outputFilename, int border, int verbose);
+  const char *outputImageFilename, const char *outputInfoFilename,
+  int border, int verbose);
 
 #endif

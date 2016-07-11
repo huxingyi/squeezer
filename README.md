@@ -25,7 +25,8 @@ usage: squeezerw [options] <sprite image dir>
         --height <output height>
         --allowRotations <1/0/true/false/yes/no>
         --border <1/0/true/false/yes/no>
-        --output <output filename>
+        --outputTexture <output texture filename>
+        --outputInfo <output sprite info filename>
         --verbose
         --version
 ```
@@ -36,7 +37,7 @@ Example
 $ cd ./src
 $ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 $ make
-$ ./squeezerw ../example/images --verbose --width 512 --height 256 --border 1 --output ../example/squeezer.png
+$ ./squeezerw ../example/images --verbose --width 512 --height 256 --border 1 --outputTexture ../example/squeezer.png --outputInfo ../example/squeezer.xml
 ```
 
 Licensing

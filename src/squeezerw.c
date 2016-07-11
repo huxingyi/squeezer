@@ -12,7 +12,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
- 
+
 #include "squeezer.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -25,7 +25,8 @@ static int binWidth = 512;
 static int binHeight = 512;
 static int allowRotations = 1;
 static int verbose = 0;
-static const char *outputFilename = "squeezer.png";
+static const char *outputTextureFilename = "squeezer.png";
+static const char *outputInfoFilename = "squeezer.xml";
 static int border = 0;
 
 static void usage(void) {
@@ -36,7 +37,8 @@ static void usage(void) {
     "        --height <output height>\n"
     "        --allowRotations <1/0/true/false/yes/no>\n"
     "        --border <1/0/true/false/yes/no>\n"
-    "        --output <output filename>\n"
+    "        --outputTexture <output texture filename>\n"
+    "        --outputInfo <output sprite info filename>\n"
     "        --verbose\n"
     "        --version\n");
 }
@@ -73,8 +75,10 @@ int main(int argc, char *argv[]) {
         allowRotations = parseBooleanParam(argv[++i]);
       } else if (0 == strcmp(param, "--border")) {
         border = parseBooleanParam(argv[++i]);
-      } else if (0 == strcmp(param, "--output")) {
-        outputFilename = argv[++i];
+      } else if (0 == strcmp(param, "--outputTexture")) {
+        outputTextureFilename = argv[++i];
+      } else if (0 == strcmp(param, "--outputInfo")) {
+        outputInfoFilename = argv[++i];
       } else if (0 == strcmp(param, "--verbose")) {
         verbose = 1;
       } else {
@@ -96,15 +100,17 @@ int main(int argc, char *argv[]) {
       "    --height %d\n"
       "    --allowRotations %s\n"
       "    --border %s\n"
-      "    --output %s\n"
+      "    --outputTexture %s\n"
+      "    --outputInfo %s\n"
       "%s",
       binWidth,
       binHeight,
       allowRotations ? "true" : "false",
       border ? "true" : "false",
-      outputFilename,
+      outputTextureFilename,
+      outputInfoFilename,
       verbose ? "    --verbose\n" : "");
   }
-  return squeezer(dir, binWidth, binHeight, allowRotations, outputFilename,
-    border, verbose);
+  return squeezer(dir, binWidth, binHeight, allowRotations,
+    outputTextureFilename, outputInfoFilename, border, verbose);
 }
