@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Squeezer by huxingyi</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Squeezer</h1>
+        <p>Texture Packer for Game Development Using MaxRects Algorithm</p>
+
+        <p class="view"><a href="https://github.com/huxingyi/squeezer">View the Project on GitHub <small>huxingyi/squeezer</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/huxingyi/squeezer/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/huxingyi/squeezer/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/huxingyi/squeezer">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="overview--" class="anchor" href="#overview--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview <img src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" width="122" height="20"> <a href="https://travis-ci.org/huxingyi/squeezer"><img src="https://travis-ci.org/huxingyi/squeezer.svg?branch=master" alt="Build Status"></a>
+</h2>
+
+<p><strong>Texture Packer</strong> for Game Development Using MaxRects Algorithm.  </p>
+
+<p><img src="https://raw.githubusercontent.com/huxingyi/squeezer/master/example/squeezer.png" width="512" height="256">  </p>
+
+<p><em>Note: The game assets used in this example were download from <a href="http://opengameart.org/content/grassland-tileset">Grassland Tileset</a>, thanks <code>Clint Bellanger</code> for made so many awesome game resources.</em>  </p>
+
+<h2>
+<a id="building" class="anchor" href="#building" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"># Install ImageMagick via `brew install imagemagick` on Mac or visit http://imagemagick.org</span>
+
+$ <span class="pl-c1">cd</span> ./src
+$ <span class="pl-k">export</span> PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+$ make</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-shell"><pre>usage: squeezerw [options] <span class="pl-k">&lt;</span>sprite image dir<span class="pl-k">&gt;</span>
+    options:
+        --width <span class="pl-k">&lt;</span>output width<span class="pl-k">&gt;</span>
+        --height <span class="pl-k">&lt;</span>output height<span class="pl-k">&gt;</span>
+        --allowRotations <span class="pl-k">&lt;</span>1/0/true/false/yes/no<span class="pl-k">&gt;</span>
+        --border <span class="pl-k">&lt;</span>1/0/true/false/yes/no<span class="pl-k">&gt;</span>
+        --outputTexture <span class="pl-k">&lt;</span>output texture filename<span class="pl-k">&gt;</span>
+        --outputInfo <span class="pl-k">&lt;</span>output sprite info filename<span class="pl-k">&gt;</span>
+        --verbose
+        --version</pre></div>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-source-shell"><pre>$ <span class="pl-c1">cd</span> ./src
+$ <span class="pl-k">export</span> PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+$ make
+$ ./squeezerw ../example/images --verbose --width 512 --height 256 --border 1 --outputTexture ../example/squeezer.png --outputInfo ../example/squeezer.xml</pre></div>
+
+<h2>
+<a id="licensing" class="anchor" href="#licensing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licensing</h2>
+
+<p>Licensed under the MIT license.  </p>
+
+<h2>
+<a id="references" class="anchor" href="#references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h2>
+
+<ol>
+<li>
+<a href="http://www.blackpawn.com/texts/lightmaps/">http://www.blackpawn.com/texts/lightmaps/</a><br>
+</li>
+<li>
+<a href="http://clb.demon.fi/projects/more-rectangle-bin-packing">http://clb.demon.fi/projects/more-rectangle-bin-packing</a><br>
+</li>
+<li>
+<a href="http://wiki.unity3d.com/index.php?title=MaxRectsBinPack">http://wiki.unity3d.com/index.php?title=MaxRectsBinPack</a><br>
+</li>
+<li>
+<a href="https://github.com/juj/RectangleBinPack">https://github.com/juj/RectangleBinPack</a><br>
+</li>
+<li>
+<a href="http://opengameart.org/content/flare-weapon-icons-2">http://opengameart.org/content/flare-weapon-icons-2</a><br>
+</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/huxingyi">huxingyi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
