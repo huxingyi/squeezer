@@ -1,0 +1,9 @@
+!include <win32.mak>
+
+all: squeezerw.exe
+
+.c.obj:
+  $(cc) $(cdebug) $(cflags) $(cvars) $*.c
+
+squeezerw.exe: maxrects.obj squeezer.obj squeezerw.obj lodepng.obj
+  $(link) $(ldebug) $(conflags) -out:squeezerw.exe $** $(conlibs)
