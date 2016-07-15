@@ -4,8 +4,8 @@ CFLAGS=/I ".\\"
 
 all: squeezerw.exe
 
-squeezerw.exe: maxrects.obj squeezer.obj squeezerw.obj lodepng.obj
+squeezerw.exe: maxrects.obj squeezer.obj squeezerw.obj lodepng.obj imageops.obj
   $(link) -out:squeezerw.exe $**
 
 clean:
-  del squeezerw.exe maxrects.obj squeezer.obj squeezerw.obj lodepng.obj
+  del squeezerw.exe maxrects.obj squeezer.obj squeezerw.obj lodepng.obj imageops.obj
