@@ -22,6 +22,10 @@
 #include "maxrects.h"
 #include "imageops.h"
 
+#ifdef _WIN32
+#define snprintf sprintf_s
+#endif
+
 typedef struct fileItem {
   struct fileItem *next;
   char filename[780];
