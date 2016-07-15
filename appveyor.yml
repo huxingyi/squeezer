@@ -7,6 +7,6 @@ init:
 
 build_script:
   - cd src
-  - nmake -f Makefile.win
+  - nmake -f Makefile.mak
   - squeezerw.exe ../example/images --verbose --width 512 --height 256 --border 1 --outputTexture ../example/squeezer.png --outputInfo ../example/squeezer.xml
   - squeezerw.exe ../example/images --verbose --width 512 --height 256 --border 1 --outputTexture ../example/squeezer.png --outputInfo ../example/squeezer.json --infoHeader "{\"textureWidth\":\"%W\", \"textureHeight\":\"%H\", \"items\":[\n" --infoFooter "]}" --infoBody "{\"name\":\"%n\", \"width\":\"%w\", \"height\":\"%h\", \"left\":\"%x\", \"top\":\"%y\", \"rotated\":\"%f\", \"trimOffsetLeft\":\"%l\", \"trimOffsetTop\":\"%t\", \"originWidth\":\"%c\", \"originHeight\":\"%r\"}" --infoSplit "\n,"
