@@ -1,4 +1,4 @@
-Overview <img src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" width="122" height="20"/> [![Build Status](https://travis-ci.org/huxingyi/squeezer.svg?branch=master)](https://travis-ci.org/huxingyi/squeezer)
+Overview <img src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" width="122" height="20"/> [![Build Status](https://travis-ci.org/huxingyi/squeezer.svg?branch=master)](https://travis-ci.org/huxingyi/squeezer) [![Build status](https://ci.appveyor.com/api/projects/status/h9vckwyht5e0pj87/branch/master?svg=true)](https://ci.appveyor.com/project/huxingyi/squeezer/branch/master)
 ------------
 **Texture Packer** for Game Development Using MaxRects Algorithm.  
 
@@ -10,11 +10,18 @@ Contributing
 --------------
 
 
-Building
+Building(Linux/OSX)
 ---------------
 ```sh
 $ cd ./src
 $ make
+```
+
+Building(Windows)
+--------------
+```sh
+$ cd .\src
+$ nmake -f Makefile.mak
 ```
 
 Usage
