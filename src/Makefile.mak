@@ -1,5 +1,6 @@
 cc=cl.exe
 link=link.exe
+CFLAGS=/I ".\\"
 
 all: squeezerw.exe
 
