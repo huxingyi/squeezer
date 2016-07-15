@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <texture width="512" height="256">
-    <sprite name="../example/images/9.png" left="309" top="183" rotated="false" width="42" height="45"></sprite>
-    <sprite name="../example/images/8.png" left="278" top="136" rotated="true" width="47" height="45"></sprite>
-    <sprite name="../example/images/7.png" left="230" top="0" rotated="true" width="49" height="48"></sprite>
-    <sprite name="../example/images/6.png" left="351" top="181" rotated="true" width="44" height="34"></sprite>
-    <sprite name="../example/images/5.png" left="385" top="179" rotated="true" width="43" height="32"></sprite>
-    <sprite name="../example/images/48.png" left="186" top="148" rotated="false" width="41" height="58"></sprite>
-    <sprite name="../example/images/47.png" left="146" top="0" rotated="false" width="41" height="57"></sprite>
-    <sprite name="../example/images/46.png" left="304" top="97" rotated="false" width="33" height="39"></sprite>
-    <sprite name="../example/images/45.png" left="271" top="97" rotated="false" width="33" height="39"></sprite>
-    <sprite name="../example/images/44.png" left="83" top="86" rotated="false" width="54" height="81"></sprite>
-    <sprite name="../example/images/43.png" left="73" top="169" rotated="false" width="54" height="81"></sprite>
-    <sprite name="../example/images/42.png" left="187" top="0" rotated="true" width="56" height="43"></sprite>
-    <sprite name="../example/images/41.png" left="361" top="0" rotated="true" width="44" height="35"></sprite>
-    <sprite name="../example/images/40.png" left="0" top="0" rotated="false" width="41" height="89"></sprite>
-    <sprite name="../example/images/4.png" left="137" top="84" rotated="true" width="64" height="59"></sprite>
-    <sprite name="../example/images/39.png" left="41" top="0" rotated="false" width="46" height="86"></sprite>
-    <sprite name="../example/images/38.png" left="43" top="86" rotated="false" width="40" height="83"></sprite>
-    <sprite name="../example/images/37.png" left="0" top="89" rotated="false" width="43" height="88"></sprite>
-    <sprite name="../example/images/36.png" left="161" top="231" rotated="false" width="31" height="25"></sprite>
-    <sprite name="../example/images/35.png" left="351" top="225" rotated="false" width="36" height="31"></sprite>
-    <sprite name="../example/images/34.png" left="180" top="57" rotated="false" width="24" height="24"></sprite>
-    <sprite name="../example/images/33.png" left="228" top="106" rotated="false" width="43" height="30"></sprite>
-    <sprite name="../example/images/32.png" left="387" top="222" rotated="false" width="38" height="32"></sprite>
-    <sprite name="../example/images/31.png" left="269" top="189" rotated="true" width="51" height="40"></sprite>
-    <sprite name="../example/images/30.png" left="393" top="135" rotated="true" width="35" height="31"></sprite>
-    <sprite name="../example/images/3.png" left="127" top="167" rotated="true" width="64" height="59"></sprite>
-    <sprite name="../example/images/29.png" left="318" top="0" rotated="true" width="47" height="43"></sprite>
-    <sprite name="../example/images/28.png" left="372" top="92" rotated="true" width="43" height="33"></sprite>
-    <sprite name="../example/images/27.png" left="359" top="136" rotated="true" width="43" height="34"></sprite>
-    <sprite name="../example/images/26.png" left="228" top="56" rotated="true" width="50" height="39"></sprite>
-    <sprite name="../example/images/25.png" left="337" top="95" rotated="true" width="41" height="35"></sprite>
-    <sprite name="../example/images/24.png" left="121" top="64" rotated="false" width="25" height="20"></sprite>
-    <sprite name="../example/images/23.png" left="146" top="57" rotated="true" width="27" height="34"></sprite>
-    <sprite name="../example/images/22.png" left="234" top="189" rotated="true" width="53" height="35"></sprite>
-    <sprite name="../example/images/21.png" left="196" top="81" rotated="true" width="55" height="32"></sprite>
-    <sprite name="../example/images/20.png" left="313" top="48" rotated="true" width="47" height="44"></sprite>
-    <sprite name="../example/images/2.png" left="87" top="0" rotated="true" width="64" height="59"></sprite>
-    <sprite name="../example/images/19.png" left="278" top="0" rotated="true" width="48" height="40"></sprite>
-    <sprite name="../example/images/18.png" left="357" top="47" rotated="true" width="45" height="29"></sprite>
-    <sprite name="../example/images/17.png" left="323" top="136" rotated="true" width="45" height="36"></sprite>
-    <sprite name="../example/images/16.png" left="267" top="49" rotated="true" width="48" height="46"></sprite>
-    <sprite name="../example/images/15.png" left="0" top="241" rotated="true" width="14" height="38"></sprite>
-    <sprite name="../example/images/14.png" left="87" top="64" rotated="true" width="21" height="34"></sprite>
-    <sprite name="../example/images/13.png" left="192" top="206" rotated="false" width="42" height="50"></sprite>
-    <sprite name="../example/images/12.png" left="227" top="136" rotated="true" width="53" height="51"></sprite>
-    <sprite name="../example/images/11.png" left="38" top="241" rotated="true" width="12" height="35"></sprite>
-    <sprite name="../example/images/10.png" left="127" top="231" rotated="true" width="25" height="34"></sprite>
-    <sprite name="../example/images/1.png" left="0" top="177" rotated="true" width="64" height="59"></sprite>
+    <sprite name="9.png" left="309" top="183" rotated="false" width="42" height="45" trimOffsetLeft="22" trimOffsetTop="7" originWidth="64" originHeight="64"></sprite>
+    <sprite name="8.png" left="278" top="136" rotated="true" width="47" height="45" trimOffsetLeft="8" trimOffsetTop="17" originWidth="64" originHeight="64"></sprite>
+    <sprite name="7.png" left="230" top="0" rotated="true" width="49" height="48" trimOffsetLeft="9" trimOffsetTop="12" originWidth="64" originHeight="64"></sprite>
+    <sprite name="6.png" left="351" top="181" rotated="true" width="44" height="34" trimOffsetLeft="11" trimOffsetTop="26" originWidth="64" originHeight="64"></sprite>
+    <sprite name="5.png" left="385" top="179" rotated="true" width="43" height="32" trimOffsetLeft="11" trimOffsetTop="26" originWidth="64" originHeight="64"></sprite>
+    <sprite name="48.png" left="186" top="148" rotated="false" width="41" height="58" trimOffsetLeft="15" trimOffsetTop="32" originWidth="64" originHeight="96"></sprite>
+    <sprite name="47.png" left="146" top="0" rotated="false" width="41" height="57" trimOffsetLeft="15" trimOffsetTop="32" originWidth="64" originHeight="96"></sprite>
+    <sprite name="46.png" left="304" top="97" rotated="false" width="33" height="39" trimOffsetLeft="18" trimOffsetTop="48" originWidth="64" originHeight="96"></sprite>
+    <sprite name="45.png" left="271" top="97" rotated="false" width="33" height="39" trimOffsetLeft="18" trimOffsetTop="49" originWidth="64" originHeight="96"></sprite>
+    <sprite name="44.png" left="83" top="86" rotated="false" width="54" height="81" trimOffsetLeft="10" trimOffsetTop="3" originWidth="64" originHeight="96"></sprite>
+    <sprite name="43.png" left="73" top="169" rotated="false" width="54" height="81" trimOffsetLeft="10" trimOffsetTop="3" originWidth="64" originHeight="96"></sprite>
+    <sprite name="42.png" left="187" top="0" rotated="true" width="56" height="43" trimOffsetLeft="4" trimOffsetTop="49" originWidth="64" originHeight="96"></sprite>
+    <sprite name="41.png" left="361" top="0" rotated="true" width="44" height="35" trimOffsetLeft="12" trimOffsetTop="59" originWidth="64" originHeight="96"></sprite>
+    <sprite name="40.png" left="0" top="0" rotated="false" width="41" height="89" trimOffsetLeft="12" trimOffsetTop="3" originWidth="64" originHeight="96"></sprite>
+    <sprite name="4.png" left="137" top="84" rotated="true" width="64" height="59" trimOffsetLeft="0" trimOffsetTop="5" originWidth="64" originHeight="64"></sprite>
+    <sprite name="39.png" left="41" top="0" rotated="false" width="46" height="86" trimOffsetLeft="10" trimOffsetTop="5" originWidth="64" originHeight="96"></sprite>
+    <sprite name="38.png" left="43" top="86" rotated="false" width="40" height="83" trimOffsetLeft="12" trimOffsetTop="6" originWidth="64" originHeight="96"></sprite>
+    <sprite name="37.png" left="0" top="89" rotated="false" width="43" height="88" trimOffsetLeft="10" trimOffsetTop="4" originWidth="64" originHeight="96"></sprite>
+    <sprite name="36.png" left="161" top="231" rotated="false" width="31" height="25" trimOffsetLeft="16" trimOffsetTop="60" originWidth="64" originHeight="96"></sprite>
+    <sprite name="35.png" left="351" top="225" rotated="false" width="36" height="31" trimOffsetLeft="18" trimOffsetTop="60" originWidth="64" originHeight="96"></sprite>
+    <sprite name="34.png" left="180" top="57" rotated="false" width="24" height="24" trimOffsetLeft="17" trimOffsetTop="54" originWidth="64" originHeight="96"></sprite>
+    <sprite name="33.png" left="228" top="106" rotated="false" width="43" height="30" trimOffsetLeft="3" trimOffsetTop="59" originWidth="64" originHeight="96"></sprite>
+    <sprite name="32.png" left="387" top="222" rotated="false" width="38" height="32" trimOffsetLeft="19" trimOffsetTop="26" originWidth="64" originHeight="64"></sprite>
+    <sprite name="31.png" left="269" top="189" rotated="true" width="51" height="40" trimOffsetLeft="11" trimOffsetTop="21" originWidth="64" originHeight="64"></sprite>
+    <sprite name="30.png" left="393" top="135" rotated="true" width="35" height="31" trimOffsetLeft="13" trimOffsetTop="27" originWidth="64" originHeight="64"></sprite>
+    <sprite name="3.png" left="127" top="167" rotated="true" width="64" height="59" trimOffsetLeft="0" trimOffsetTop="5" originWidth="64" originHeight="64"></sprite>
+    <sprite name="29.png" left="318" top="0" rotated="true" width="47" height="43" trimOffsetLeft="12" trimOffsetTop="18" originWidth="64" originHeight="64"></sprite>
+    <sprite name="28.png" left="372" top="92" rotated="true" width="43" height="33" trimOffsetLeft="13" trimOffsetTop="27" originWidth="64" originHeight="64"></sprite>
+    <sprite name="27.png" left="359" top="136" rotated="true" width="43" height="34" trimOffsetLeft="13" trimOffsetTop="27" originWidth="64" originHeight="64"></sprite>
+    <sprite name="26.png" left="228" top="56" rotated="true" width="50" height="39" trimOffsetLeft="14" trimOffsetTop="22" originWidth="64" originHeight="64"></sprite>
+    <sprite name="25.png" left="337" top="95" rotated="true" width="41" height="35" trimOffsetLeft="17" trimOffsetTop="21" originWidth="64" originHeight="64"></sprite>
+    <sprite name="24.png" left="121" top="64" rotated="false" width="25" height="20" trimOffsetLeft="21" trimOffsetTop="29" originWidth="64" originHeight="64"></sprite>
+    <sprite name="23.png" left="146" top="57" rotated="true" width="27" height="34" trimOffsetLeft="22" trimOffsetTop="15" originWidth="64" originHeight="64"></sprite>
+    <sprite name="22.png" left="234" top="189" rotated="true" width="53" height="35" trimOffsetLeft="7" trimOffsetTop="27" originWidth="64" originHeight="64"></sprite>
+    <sprite name="21.png" left="196" top="81" rotated="true" width="55" height="32" trimOffsetLeft="2" trimOffsetTop="27" originWidth="64" originHeight="64"></sprite>
+    <sprite name="20.png" left="313" top="48" rotated="true" width="47" height="44" trimOffsetLeft="11" trimOffsetTop="14" originWidth="64" originHeight="64"></sprite>
+    <sprite name="2.png" left="87" top="0" rotated="true" width="64" height="59" trimOffsetLeft="0" trimOffsetTop="5" originWidth="64" originHeight="64"></sprite>
+    <sprite name="19.png" left="278" top="0" rotated="true" width="48" height="40" trimOffsetLeft="8" trimOffsetTop="17" originWidth="64" originHeight="64"></sprite>
+    <sprite name="18.png" left="357" top="47" rotated="true" width="45" height="29" trimOffsetLeft="13" trimOffsetTop="29" originWidth="64" originHeight="64"></sprite>
+    <sprite name="17.png" left="323" top="136" rotated="true" width="45" height="36" trimOffsetLeft="13" trimOffsetTop="24" originWidth="64" originHeight="64"></sprite>
+    <sprite name="16.png" left="267" top="49" rotated="true" width="48" height="46" trimOffsetLeft="0" trimOffsetTop="8" originWidth="64" originHeight="64"></sprite>
+    <sprite name="15.png" left="0" top="241" rotated="true" width="14" height="38" trimOffsetLeft="18" trimOffsetTop="8" originWidth="64" originHeight="64"></sprite>
+    <sprite name="14.png" left="87" top="64" rotated="true" width="21" height="34" trimOffsetLeft="30" trimOffsetTop="16" originWidth="64" originHeight="64"></sprite>
+    <sprite name="13.png" left="192" top="206" rotated="false" width="42" height="50" trimOffsetLeft="22" trimOffsetTop="3" originWidth="64" originHeight="64"></sprite>
+    <sprite name="12.png" left="227" top="136" rotated="true" width="53" height="51" trimOffsetLeft="0" trimOffsetTop="0" originWidth="64" originHeight="64"></sprite>
+    <sprite name="11.png" left="38" top="241" rotated="true" width="12" height="35" trimOffsetLeft="20" trimOffsetTop="12" originWidth="64" originHeight="64"></sprite>
+    <sprite name="10.png" left="127" top="231" rotated="true" width="25" height="34" trimOffsetLeft="30" trimOffsetTop="14" originWidth="64" originHeight="64"></sprite>
+    <sprite name="1.png" left="0" top="177" rotated="true" width="64" height="59" trimOffsetLeft="0" trimOffsetTop="5" originWidth="64" originHeight="64"></sprite>
 </texture>

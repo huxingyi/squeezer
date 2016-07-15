@@ -27,6 +27,10 @@ static int allowRotations = 1;
 static int verbose = 0;
 static const char *outputTextureFilename = "squeezer.png";
 static const char *outputInfoFilename = "squeezer.xml";
+static const char *infoHeader = 0;
+static const char *infoFooter = 0;
+static const char *infoBody = 0;
+static const char *infoSplit = 0;
 static int border = 0;
 
 static void usage(void) {
@@ -39,8 +43,26 @@ static void usage(void) {
     "        --border <1/0/true/false/yes/no>\n"
     "        --outputTexture <output texture filename>\n"
     "        --outputInfo <output sprite info filename>\n"
+    "        --infoHeader <output header template>\n"
+    "        --infoBody <output body template>\n"
+    "        --infoSplit <output body split template>\n"
+    "        --infoFooter <output footer template>\n"
     "        --verbose\n"
-    "        --version\n");
+    "        --version\n"
+    "    format specifiers of infoHeader/infoBody/infoFooter:\n"
+    "        %%W: output width\n"
+    "        %%H: output height\n"
+    "        %%n: image name\n"
+    "        %%w: image width\n"
+    "        %%h: image height\n"
+    "        %%x: left on output image\n"
+    "        %%y: top on output image\n"
+    "        %%l: trim offset left\n"
+    "        %%t: trim offset top\n"
+    "        %%c: original width\n"
+    "        %%r: original height\n"
+    "        %%f: 1 if rotated else 0\n"
+    "        and '\\n', '\\r', '\\t'\n");
 }
 
 static int parseBooleanParam(const char *param) {
@@ -53,6 +75,45 @@ static int parseBooleanParam(const char *param) {
       return 0;
   }
   return 1;
+}
+
+static int squeezerw(void) {
+  squeezer *ctx = squeezerCreate();
+  if (!ctx) {
+    fprintf(stderr, "%s: squeezerCreate failed\n", __FUNCTION__);
+    return -1;
+  }
+  squeezerSetBinWidth(ctx, binWidth);
+  squeezerSetBinHeight(ctx, binHeight);
+  squeezerSetAllowRotations(ctx, allowRotations);
+  squeezerSetVerbose(ctx, verbose);
+  squeezerSetHasBorder(ctx, border);
+  if (0 != squeezerDoDir(ctx, dir)) {
+    fprintf(stderr, "%s: squeezerDoDir failed\n", __FUNCTION__);
+    squeezerDestroy(ctx);
+    return -1;
+  }
+  if (0 != squeezerOutputImage(ctx, outputTextureFilename)) {
+    fprintf(stderr, "%s: squeezerOutputImage failed\n", __FUNCTION__);
+    squeezerDestroy(ctx);
+    return -1;
+  }
+  if (infoBody) {
+    if (0 != squeezerOutputCustomFormat(ctx, outputInfoFilename,
+        infoHeader, infoBody, infoFooter, infoSplit)) {
+      fprintf(stderr, "%s: squeezerOutputCustomFormat failed\n", __FUNCTION__);
+      squeezerDestroy(ctx);
+      return -1;
+    }
+  } else {
+    if (0 != squeezerOutputXml(ctx, outputInfoFilename)) {
+      fprintf(stderr, "%s: squeezerOutputXml failed\n", __FUNCTION__);
+      squeezerDestroy(ctx);
+      return -1;
+    }
+  }
+  squeezerDestroy(ctx);
+  return 0;
 }
 
 int main(int argc, char *argv[]) {
@@ -79,6 +140,14 @@ int main(int argc, char *argv[]) {
         outputTextureFilename = argv[++i];
       } else if (0 == strcmp(param, "--outputInfo")) {
         outputInfoFilename = argv[++i];
+      } else if (0 == strcmp(param, "--infoHeader")) {
+        infoHeader = argv[++i];
+      } else if (0 == strcmp(param, "--infoBody")) {
+        infoBody = argv[++i];
+      } else if (0 == strcmp(param, "--infoSplit")) {
+        infoSplit = argv[++i];
+      } else if (0 == strcmp(param, "--infoFooter")) {
+        infoFooter = argv[++i];
       } else if (0 == strcmp(param, "--verbose")) {
         verbose = 1;
       } else {
@@ -102,6 +171,10 @@ int main(int argc, char *argv[]) {
       "    --border %s\n"
       "    --outputTexture %s\n"
       "    --outputInfo %s\n"
+      "    --infoHeader %s\n"
+      "    --infoBody %s\n"
+      "    --infoFooter %s\n"
+      "    --infoSplit %s\n"
       "%s",
       binWidth,
       binHeight,
@@ -109,8 +182,11 @@ int main(int argc, char *argv[]) {
       border ? "true" : "false",
       outputTextureFilename,
       outputInfoFilename,
+      infoHeader ? infoHeader : "",
+      infoBody ? infoBody : "",
+      infoFooter ? infoFooter : "",
+      infoSplit ? infoSplit : "",
       verbose ? "    --verbose\n" : "");
   }
-  return squeezer(dir, binWidth, binHeight, allowRotations,
-    outputTextureFilename, outputInfoFilename, border, verbose);
+  return squeezerw();
 }

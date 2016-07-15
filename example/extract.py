@@ -14,7 +14,8 @@ if __name__ == "__main__":
     left = 0
     index = 1
     top = 256
-    appendFlags = ' -trim '
+    #appendFlags = ' -trim '
+    appendFlags = ''
     while left < 1024:
         executeCmd('convert grassland_tiles.png -crop 64x64+{}+{} {} images/{}.png'.format(left, top, appendFlags, index))
         left += 64

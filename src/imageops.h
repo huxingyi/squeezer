@@ -12,23 +12,24 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+ 
+#ifndef IMAGE_OPS_H
+#define IMAGE_OPS_H
 
-#ifndef SQUEEZER_H
-#define SQUEEZER_H
+typedef struct imageOpsImage imageOpsImage;
 
-typedef struct squeezer squeezer;
-
-squeezer *squeezerCreate(void);
-void squeezerSetBinWidth(squeezer *ctx, int width);
-void squeezerSetBinHeight(squeezer *ctx, int height);
-void squeezerSetAllowRotations(squeezer *ctx, int allowRotations);
-void squeezerSetVerbose(squeezer *ctx, int verbose);
-void squeezerSetHasBorder(squeezer *ctx, int hasBorder);
-int squeezerDoDir(squeezer *ctx, const char *dir);
-void squeezerDestroy(squeezer *ctx);
-int squeezerOutputImage(squeezer *ctx, const char *filename);
-int squeezerOutputXml(squeezer *ctx, const char *filename);
-int squeezerOutputCustomFormat(squeezer *ctx, const char *filename,
-  const char *header, const char *body, const char *footer, const char *split);
+int imageOpsInit(void);
+void imageOpsUninit(void);
+imageOpsImage *imageOpsOpen(const char *filename);
+int imageOpsRotate(imageOpsImage *img, int degrees);
+int imageOpsAddBorder(imageOpsImage *img);
+imageOpsImage *imageOpsCreate(int width, int height);
+int imageOpsSave(imageOpsImage *img, const char *filename);
+int imageOpsTrim(imageOpsImage *img, int *cropLeft, int *cropTop);
+void imageOpsDestroy(imageOpsImage *img);
+int imageOpsGetWidth(imageOpsImage *img);
+int imageOpsGetHeight(imageOpsImage *img);
+int imageOpsComposite(imageOpsImage *dest, imageOpsImage *src,
+  int left, int top);
 
 #endif

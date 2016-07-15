@@ -6,13 +6,14 @@ Overview <img src="https://img.shields.io/github/license/mashape/apistatus.svg?m
 
 *Note: The game assets used in this example were download from [Grassland Tileset](http://opengameart.org/content/grassland-tileset), thanks `Clint Bellanger` for made so many awesome game resources.*  
 
+Contributing
+--------------
+
+
 Building
 ---------------
 ```sh
-# Install ImageMagick via `brew install imagemagick` on Mac or visit http://imagemagick.org
-
 $ cd ./src
-$ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 $ make
 ```
 
@@ -27,22 +28,44 @@ usage: squeezerw [options] <sprite image dir>
         --border <1/0/true/false/yes/no>
         --outputTexture <output texture filename>
         --outputInfo <output sprite info filename>
+        --infoHeader <output header template>
+        --infoBody <output body template>
+        --infoSplit <output body split template>
+        --infoFooter <output footer template>
         --verbose
         --version
+    format specifiers of infoHeader/infoBody/infoFooter:
+        %W: output width
+        %H: output height
+        %n: image name
+        %w: image width
+        %h: image height
+        %x: left on output image
+        %y: top on output image
+        %l: trim offset left
+        %t: trim offset top
+        %c: original width
+        %r: original height
+        %f: 1 if rotated else 0
+        and '\n', '\r', '\t'
 ```
 
 Example
 ------------
 ```sh
 $ cd ./src
-$ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 $ make
+
 $ ./squeezerw ../example/images --verbose --width 512 --height 256 --border 1 --outputTexture ../example/squeezer.png --outputInfo ../example/squeezer.xml
+
+$ ./squeezerw ../example/images --verbose --width 512 --height 256 --border 1 --outputTexture ../example/squeezer.png --outputInfo ../example/squeezer.json --infoHeader "{\"textureWidth\":\"%W\", \"textureHeight\":\"%H\", \"items\":[\n" --infoFooter "]}" --infoBody "{\"name\":\"%n\", \"width\":\"%w\", \"height\":\"%h\", \"left\":\"%x\", \"top\":\"%y\", \"rotated\":\"%f\", \"trimOffsetLeft\":\"%l\", \"trimOffsetTop\":\"%t\", \"originWidth\":\"%c\", \"originHeight\":\"%r\"}" --infoSplit "\n,"
 ```
 
 Licensing
 -----------------
-Licensed under the MIT license.  
+Licensed under the MIT license except lodepng.c and lodepng.h.  
+
+*Note:[lodepng](https://github.com/lvandeve/lodepng) used in this project to decode and encode png format. For the license used in lodepng please visit [lodepng](https://github.com/lvandeve/lodepng) directly.*
 
 References
 ------------
