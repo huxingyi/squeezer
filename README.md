@@ -8,7 +8,8 @@ Overview <img src="https://img.shields.io/github/license/mashape/apistatus.svg?m
 
 Contributing
 --------------
-
+Don't hesitate to make a pull request. All kinds of contribution are welcome.  
+*Note: Please follow the coding style of the existed codes.*
 
 Building(Linux/OSX)
 ---------------
