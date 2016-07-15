@@ -65,7 +65,7 @@ Licensing
 -----------------
 Licensed under the MIT license except lodepng.c and lodepng.h.  
 
-*Note:[lodepng](https://github.com/lvandeve/lodepng) used in this project to decode and encode png format. For the license used in lodepng please visit [lodepng](https://github.com/lvandeve/lodepng) directly.*
+*Note: [lodepng](https://github.com/lvandeve/lodepng) used in this project to decode and encode png format. For the license used in lodepng please visit [lodepng](https://github.com/lvandeve/lodepng) directly.*
 
 References
 ------------
